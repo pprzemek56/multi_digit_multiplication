@@ -64,9 +64,35 @@ def print_multiplication(a, b):
         x = final_x - 1
         y -= 1
 
-    print(multiplication_array)
-    print(add_array)
+    for i in range(len(multiplication_array)):
+        for j in range(len(multiplication_array[0])):
+            if j == 0:
+                if i == len(multiplication_array) - 1:
+                    print("*", end=" " * len(add_array[0]))
+                else:
+                    print(" ", end=" " * len(add_array[0]))
+            if multiplication_array[i][j] != -1:
+                print(multiplication_array[i][j], end="")
+            else:
+                print(" ", end="")
+        print()
+    print("---" * len(multiplication_array[0]))
 
+    for i in range(len(add_array)):
+        for j in range(len(add_array[0])):
+            if j == 0:
+                if i == len(add_array) - 1:
+                    print("+", end=" " * len(multiplication_array[0]))
+                else:
+                    print(" ", end=" " * len(multiplication_array[0]))
+            if add_array[i][j] != -1:
+                print(add_array[i][j], end="")
+            else:
+                print(" ", end="")
+        print()
+    print("---" * len(multiplication_array[0]))
+
+    print(" " * (len(multiplication_array[0]) + 1), main_product)
 
 
 if __name__ == "__main__":
