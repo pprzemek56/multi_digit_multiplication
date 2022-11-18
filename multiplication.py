@@ -4,7 +4,7 @@ import sys
 def main():
     a = input("a = ")
     b = input("b = ")
-
+    print()
     print_multiplication(a, b)
 
 
