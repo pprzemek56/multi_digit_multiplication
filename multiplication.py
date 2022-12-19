@@ -18,7 +18,7 @@ def print_multiplication(a, b):
     b_list = [_ for _ in b]
 
     len_dif = abs(len(a_list) - len(b_list))
-    final_x = max(len(a_list), len(b_list))
+    final_x = 1 + max(len(a_list), len(b_list))
     final_y = 2 + len(a_list)
 
     multiplication_array = [[-1 for _ in range(final_x)] for _ in range(final_y)]
@@ -65,34 +65,39 @@ def print_multiplication(a, b):
         y -= 1
 
     for i in range(len(multiplication_array)):
-        for j in range(len(multiplication_array[0])):
-            if j == 0:
-                if i == len(multiplication_array) - 1:
-                    print("*", end=" " * len(add_array[0]))
-                else:
-                    print(" ", end=" " * len(add_array[0]))
-            if multiplication_array[i][j] != -1:
-                print(multiplication_array[i][j], end="")
-            else:
-                print(" ", end="")
+        for j in range(len(multiplication_array[i])):
+            print(multiplication_array[i][j], end=" ")
         print()
-    print("---" * len(multiplication_array[0]))
 
-    for i in range(len(add_array)):
-        for j in range(len(add_array[0])):
-            if j == 0:
-                if i == len(add_array) - 1:
-                    print("+", end=" " * len(multiplication_array[0]))
-                else:
-                    print(" ", end=" " * len(multiplication_array[0]))
-            if add_array[i][j] != -1:
-                print(add_array[i][j], end="")
-            else:
-                print(" ", end="")
-        print()
-    print("---" * len(multiplication_array[0]))
-
-    print(" " * (len(multiplication_array[0]) + 1), main_product)
+    # for i in range(len(multiplication_array)):
+    #     for j in range(len(multiplication_array[0])):
+    #         if j == 0:
+    #             if i == len(multiplication_array) - 1:
+    #                 print("*", end=" " * len(add_array[0]))
+    #             else:
+    #                 print(" ", end=" " * len(add_array[0]))
+    #         if multiplication_array[i][j] != -1:
+    #             print(multiplication_array[i][j], end="")
+    #         else:
+    #             print(" ", end="")
+    #     print()
+    # print("---" * len(multiplication_array[0]))
+    #
+    # for i in range(len(add_array)):
+    #     for j in range(len(add_array[0])):
+    #         if j == 0:
+    #             if i == len(add_array) - 1:
+    #                 print("+", end=" " * len(multiplication_array[0]))
+    #             else:
+    #                 print(" ", end=" " * len(multiplication_array[0]))
+    #         if add_array[i][j] != -1:
+    #             print(add_array[i][j], end="")
+    #         else:
+    #             print(" ", end="")
+    #     print()
+    # print("---" * len(multiplication_array[0]))
+    #
+    # print(" " * (len(multiplication_array[0]) + 1), main_product)
 
 
 if __name__ == "__main__":
